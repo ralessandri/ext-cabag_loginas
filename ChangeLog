@@ -1,0 +1,133 @@
+2018-04-25 Tizian Schmidlin <st@cabag.ch>
+	* version 2.1.3
+	* fixed issue with php7 strict in LoginAsService
+	* remove sorting from ToolbarItemHook
+	* Thanks for Uwe Michelfelder for his quick feedback
+
+2018-04-19 Tizian Schmidlin <st@cabag.ch>
+	* version 2.1.2
+	* check if user id is set before returning a href
+
+2018-01-29 Christopher Schnell <cs@cabag.ch>
+	* version 2.1.1 of cabag_loginas
+    * Fixed Bug in composer.json
+
+2018-01-23 Christopher Schnell <cs@cabag.ch>
+	* version 2.1.0 of cabag_loginas
+	* Starting to move towards T3V9
+    * Moved TCA Overrides to their correct folders
+    * removed old comments and cleaned up
+    * dropped 6.2 compatibility
+
+2017-11-27 Xiaoling Peng <xp@cabag.ch>
+	* version 2.0.5
+	* fixed Classes/Hook/RecordListHook.php: makeControl to remove foreach ($cells as $key => $value) - #43266
+
+2017-11-23 Surena Golijani <sg@cabag.ch>
+	* version 2.0.4
+	* edited Classes/Hook/ToolbarItemHook.php getLink(): check if form of an unsaved new user is displayed to prevent error: Unknown column 'NEW5a168f878d66b716571009' in 'where clause', working on issue #43251
+
+2016-07-28 Tizian Schmidlin <st@cabag.ch>
+	* version 2.0.3
+	* fixed tooltip
+	* version 2.0.2
+	* made the backend icon to switch user look fancy
+
+2016-07-26 Tizian Schmidlin <st@cabag.ch>
+	* version 2.0.1
+	* fixed all issues with 7.6
+	* The icon is still ugly, though
+
+2016-05-04 Tizian Schmidlin <st@cabag.ch>
+	* version 2.0.0
+	* merged https://github.com/visol/ext-cabag_loginas and https://github.com/spoonerWeb/ext-cabag_loginas
+
+2014-09-30 Nils Blattner <nb@cabag.ch>
+	* version 1.2.0
+	* [6.2] fixed compatibility issues with TYPO3 6.2
+	* [6.2] set TYPO3 dependency to 4.5.0-6.2.99
+	* [TASK] removed trailing ?> from php files
+
+2013-07-24 Nicole Cordes <typo3@cordes.co>
+	* version 1.1.9
+	* fixed respecting of domain records for multi domain systems
+
+2013-07-23 Nicole Cordes <typo3@cordes.co>
+	* version 1.1.8
+	* format code according to coding guidelines
+
+2013-04-09 Toby Merz <tm@cabag.ch>
+	* version 1.1.7
+	* adapted extension to clean up requirements for TER
+
+2012-02-15 Dimitri Koenig  <dk@cabag.ch>
+	* version 1.1.6
+	* added loginas field in fe_users table due to TYPO3 4.5 tca conventions
+
+2011-10-06 Nils Blattner <nb@cabag.ch>
+	* version 1.1.5
+	* fixed a bug when no domain record based redirect was set
+
+2011-09-21 Nils Blattner <nb@cabag.ch>
+	* version 1.1.4
+	* added the possibility to redirect after the login to a specific page, based on the domain
+	* added an option in ext_conf_template.txt to enable the additional fields in sys_domain (enableDomainBasedRedirect)
+	* added the new field to ext_tables.sql and ext_tables.php
+
+2011-06-29 Dimitri Koenig  <dk@cabag.ch>
+	* version 1.1.3
+	* fixed bug in hashkey generation
+
+2011-05-11 Nils Blattner <nb@cabag.ch>
+	* version 1.1.2
+	* changed sv1 to store a value in the session data, so that loginas users could be tracked
+
+2011-02-04 Nils Blattner <nb@cabag.ch>
+	* version 1.1.1
+	* fixed cabag_loginas.js so it really does not produce a JS-Error when the loginas-menu is not present
+
+2010-11-16 Nils Blattner <nb@cabag.ch>
+	* version 1.1.0
+	* fixed cabag_loginas.js so it does not produce a JS-Error when the loginas-menu is not present
+
+2010-09-07 Dimitri Koenig  <dk@cabag.ch>
+	* version 1.0.10
+	* limited display of FE users to 15, just in case you have over 400.000 fe_users with the same email address. Thx to Nils Blattner :-)
+
+2010-07-02 Dimitri Koenig  <dk@cabag.ch>
+	* version 1.0.9
+	* changed fixed http:// path to relative path
+
+2010-07-02 Dimitri Koenig  <dk@cabag.ch>
+	* version 1.0.8
+	* ter upload
+	* extended timeout from 300 to 3600 seconds
+
+2010-03-19 Dimitri Koenig  <dk@cabag.ch>
+	* version 0.0.7
+	* better toolbar menu allowing multiple fe_user accounts with the same email address to be shown
+
+2010-03-16 Dimitri Koenig  <dk@cabag.ch>
+	* version 0.0.6
+	* small css change
+
+2010-03-16 Dimitri Koenig  <dk@cabag.ch>
+	* version 0.0.5
+	* additional security
+	* toolbar button if a fe_user exist with same email address as backend user
+
+2010-02-15 Dimitri Koenig  <dk@cabag.ch>
+	* version 0.0.4
+	* username will be shown instead of name
+
+2010-02-15 Dimitri Koenig  <dk@cabag.ch>
+	* version 0.0.3
+	* fixed display icons bug
+
+2010-02-15 Dimitri Koenig  <dk@cabag.ch>
+	* version 0.0.2
+	* fixed auth service bug
+
+2010-02-15 Dimitri Koenig  <dk@cabag.ch>
+	* version 0.0.1
+	* initial code generated with kickstarter
