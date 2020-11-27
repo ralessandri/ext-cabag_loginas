@@ -2,6 +2,7 @@
 
 namespace Cabag\CabagLoginas\Service;
 
+use TYPO3\CMS\Core\Session\Backend\DatabaseSessionBackend;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\Restriction\HiddenRestriction;
@@ -31,6 +32,11 @@ class LoginAsService extends \TYPO3\CMS\Sv\AuthenticationService
 
         if (isset($cabag_loginas_data['verification'])) {
             $ses_id = $_COOKIE['be_typo_user'];
+            /** @var DatabaseSessionBackend $databaseSessionBackend */
+            $databaseSessionBackend = GeneralUtility::makeInstance(DatabaseSessionBackend::class);
+            if (method_exists($databaseSessionBackend, 'hash')) {
+                $ses_id = $databaseSessionBackend->hash($_COOKIE['be_typo_user']);
+            }
             $verificationHash = $cabag_loginas_data['verification'];
             unset($cabag_loginas_data['verification']);
             if (md5($GLOBALS['TYPO3_CONF_VARS']['SYS']['encryptionKey'] . $ses_id . serialize($cabag_loginas_data)) === $verificationHash &&
