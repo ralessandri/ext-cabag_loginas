@@ -2,6 +2,7 @@
 
 namespace Cabag\CabagLoginas\Service;
 
+use TYPO3\CMS\Core\Authentication\AuthenticationService;
 use TYPO3\CMS\Core\Session\Backend\DatabaseSessionBackend;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
@@ -20,10 +21,8 @@ use TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction;
  *
  * The TYPO3 project - inspiring people to share!
  */
-class LoginAsService extends \TYPO3\CMS\Sv\AuthenticationService
+class LoginAsService extends AuthenticationService
 {
-
-    protected $rowdata;
 
     public function getUser()
     {
@@ -59,9 +58,10 @@ class LoginAsService extends \TYPO3\CMS\Sv\AuthenticationService
                     $user = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows(
                         '*', 'fe_users', 'uid = ' . intval($cabag_loginas_data['userid'])
                     );
+
                 }
                 if ($user[0]) {
-                    $row = $this->rowdata = $user[0];
+                    $row = $user[0];
                     if (is_object($GLOBALS["TSFE"]->fe_user)) {
                         $GLOBALS["TSFE"]->fe_user->setKey('ses', 'tx_cabagloginas', true);
                     }
@@ -75,8 +75,9 @@ class LoginAsService extends \TYPO3\CMS\Sv\AuthenticationService
     public function authUser(array $user): int
     {
         $OK = 100;
+        $cabagLoginasData = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('tx_cabagloginas');
 
-        if ($this->rowdata['uid'] == $user['uid']) {
+        if ((int) $cabagLoginasData['userid'] === $user['uid']) {
             $OK = 200;
         }
 

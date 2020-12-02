@@ -8,7 +8,7 @@ $tempColumns = array(
 		'label' => 'LLL:EXT:cabag_loginas/Resources/Private/Language/locallang_db.xlf:fe_users.tx_cabagloginas_loginas',
 		'config' => array(
 			'type' => 'user',
-			'userFunc' => 'Cabag\CabagLoginas\Hook\ToolbarItemHook->getLink',
+			'renderType' => 'getLoginLinkElement',
 		)
 	),
 );

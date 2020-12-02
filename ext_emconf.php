@@ -10,7 +10,7 @@
  * writing. "version" and "dependencies" must not be touched!
  ***************************************************************/
 
-$EM_CONF[$_EXTKEY] = array(
+$EM_CONF['cabag_loginas'] = array(
     'title' => 'CAB Login As',
     'description' => 'Within the backend you have a button in the fe_user table and in the upper right corner to quickly login as this fe user in frontend.',
     'category' => 'be',
@@ -26,7 +26,7 @@ $EM_CONF[$_EXTKEY] = array(
         array(
             'depends' =>
                 array(
-                    'typo3' => '7.6.0-9.5.99',
+                    'typo3' => '7.6.0-10.4.99',
                 ),
             'conflicts' =>
                 array(),

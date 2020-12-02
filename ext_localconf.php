@@ -31,3 +31,9 @@ $GLOBALS['TYPO3_CONF_VARS']['SVCONF']['auth']['setup']['FE_alwaysFetchUser'] = 1
 	)
 );
 
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1606904475] = [
+    'nodeName' => 'getLoginLinkElement',
+    'priority' => 40,
+    'class' => Cabag\CabagLoginas\Form\Element\LoginLink::class
+];
+
